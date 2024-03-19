@@ -25,3 +25,4 @@ jobs:
               docker stop kurs
               docker rm kurs
               docker run --name kurs -d -p 127.0.0.2:80:80 docker.io/library/kurs
+
