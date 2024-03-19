@@ -21,4 +21,4 @@ jobs:
       - name: Build the Docker image
         run: docker build -t kurs . 
       - name: Deploy the Docker image
-        run: docker run -d -p 127.0.0.2:80:80 docker.io/library/kurs
+        run: docker run --name kurs -d -p 127.0.0.2:80:80 docker.io/library/kurs
