@@ -36,8 +36,6 @@ jobs:
      steps:
       - name: Start deploy the Docker image
         run: echo "------------Start deploying the docker image...------------"
-      - name: Preparation and cleanup for deploy
-        run:  docker rm kurs 
       - name: Deploy the Docker image
         run: docker run --name kurs -d -p 127.0.0.2:80:80 docker.io/library/kurs 
       - name: End deploy the Docker image
