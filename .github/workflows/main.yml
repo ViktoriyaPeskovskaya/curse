@@ -16,7 +16,7 @@ jobs:
       - name: Test Results   
         run: echo "------------The tests have been successfully passed! ------------"
 
- build:
+  build:
     runs-on: self-hosted
     steps:
       - name: Checkout code
