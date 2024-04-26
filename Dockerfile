@@ -9,6 +9,7 @@ COPY . /app
 
 # Установка зависимостей
 RUN pip install flask
+RUN pip install datetime
 
 # Определение порта, на котором будет работать приложение
 EXPOSE 80
