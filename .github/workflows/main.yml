@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push the Docker image to the DockerHub
-        run: docker push cariptik2/kurs:latest
+        run: docker push cariptik/kurs:latest
       - name: End build the Docker image
         run: echo "------------Docker image created successfully!------------"
 
