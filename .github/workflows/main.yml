@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push the Docker image to the DockerHub
-        run: docker push cariptik/library/kurs:latest
+        run: docker push cariptik/kurs
       - name: End build the Docker image
         run: echo "------------Docker image created successfully!------------"
 
@@ -46,7 +46,7 @@ jobs:
       - name: Preparation and cleanup for deploy
         run:  docker rm -f $(docker ps -a -q) 
       - name: Deploy the Docker image
-        run: docker run -d -p 127.0.0.2:80:80 --name kurs cariptik/kurs:latest 
+        run: docker run -d -p 127.0.0.2:80:80 --name kurs cariptik/kurs 
       - name: End deploy the Docker image
         run: echo "New container added at http://127.0.0.2:80"
 
