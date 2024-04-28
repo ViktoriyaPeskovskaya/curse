@@ -44,7 +44,7 @@ jobs:
       - name: Start deploy the Docker image
         run: echo "------------Start deploying the docker image...------------"
       - name: Preparation and cleanup for deploy
-        run:  docker rm -f $(docker ps -a -q) || echo "No containers available for cleaning"
+        run:  docker rm -f $(docker ps -a -q) 
       - name: Deploy the Docker image
         run: docker run -d -p 127.0.0.2:80:80 --name kurs_container cariptik/kurs:latest 
       - name: End deploy the Docker image
