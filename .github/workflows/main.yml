@@ -26,14 +26,14 @@ jobs:
       - name: Start build the Docker image
         run: echo "------------Start building the docker image...------------"
       - name: Build the Docker image
-        run: docker build -t kurs .
+        run: docker build -t cariptik/kurs:latest python/.
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push the Docker image to the DockerHub
-        run: docker push cariptik/kurs
+        run: docker push cariptik/kurs:latest
       - name: End build the Docker image
         run: echo "------------Docker image created successfully!------------"
 
@@ -46,7 +46,7 @@ jobs:
       - name: Preparation and cleanup for deploy
         run:  docker rm -f $(docker ps -a -q) 
       - name: Deploy the Docker image
-        run: docker run -d -p 127.0.0.2:80:80 --name kurs cariptik/kurs 
+        run: docker run -d -p 127.0.0.2:80:80 --name kurs cariptik/kurs:latest 
       - name: End deploy the Docker image
         run: echo "New container added at http://127.0.0.2:80"
 
